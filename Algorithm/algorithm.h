@@ -49,6 +49,8 @@ struct Rebin {
      */
     void operator()( const std::vector< T >& time_series, T f_res, T time_int ) {
 
+        rebinned_signal.clear();
+
         uint sig_size = time_series.size();
         T delta_f = static_cast<T>( 1 )/( time_int );
 
@@ -91,6 +93,8 @@ struct Rebin {
      * Number of elements that should be averaged into a single bin.
      */
     void operator()( const std::vector< T >& time_series, uint overbin_size ) {
+
+        rebinned_signal.clear();
 
         uint sig_size = time_series.size();
 

@@ -27,6 +27,9 @@ void ProgramFrame::SetBackground() {
     MoveToBGSubtractionLength();
 
     std::vector< double > background = hp8757_c->TakeDataMultiple();
+
+    emit UpdateNA( background, nwa_span_MHz*4.0 );
+
     data_list blank_data = power_to_data_list( background, na_min_freq, na_max_freq );
 
     mode_tracker.SetBackground( blank_data );
@@ -54,24 +57,23 @@ void ProgramFrame::EstablishBinSize() {
 
     double peak_position = 0;
 
-    for( uint i = 0; i < 10; i ++ ) {
-
-        try {
-            peak_position = FindMinimaPeak( formatted_na_scan );
-            break;
-        } catch (const mode_track_failure& e) {
-            Jitter();
-        }
-
+    try {
+        peak_position = FindMinimaPeak( formatted_na_scan );
+    } catch (const mode_track_failure& e) {
+        Jitter();
     }
 
     MoveToStartLength();
 
     rebin_size = GetRebinSize<double>( peak_position, 1.0 );
+
+    std::cout << "Established rebin size of " << rebin_size << std::endl;
 }
 
 double ProgramFrame::FindMinimaPeak(data_list formatted_points ) {
+
     return mode_tracker.GetPeaksBiLat( formatted_points, 1 );
+
 }
 
 std::string ProgramFrame::BuildHeader() {

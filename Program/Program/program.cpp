@@ -107,6 +107,7 @@ void Program::Run() {
 
     Prequel();
     SetBackground();
+    EstablishBinSize();
 
     for( uint i = 0; i <= number_of_iterations ; i ++ ) {
 

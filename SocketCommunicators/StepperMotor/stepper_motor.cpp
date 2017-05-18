@@ -31,7 +31,7 @@ void StepperMotor::TuneToLength(double desired_length, double current_length ) {
     socket->SendScl( command );
 
     double delay_time = std::abs( delta_l );
-    sleep( delay_time );
+    sleep( 2.0*delay_time );
 
     socket->CloseConnection();
 }
@@ -51,7 +51,7 @@ void StepperMotor::TuneCavity( double length_of_tune ) {
     socket->SendScl( command );
 
     double delay_time = std::abs( length_of_tune );
-    sleep( delay_time );
+    sleep( 2.0*delay_time );
 
     socket->CloseConnection();
 }
@@ -84,7 +84,7 @@ void StepperMotor::TuningLoop( double len_of_tune, double revs, uint iters ) {
     socket->SendScl( command );
 
     socket->CloseConnection();
-    sleep( revs );
+    sleep( 2.0*revs );
 }
 
 //Private Functions
