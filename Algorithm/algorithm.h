@@ -5,6 +5,7 @@
 //
 //C++ System headers
 #include <string>
+#include <vector>
 //Qt Headers
 //
 //OpenCV Headers

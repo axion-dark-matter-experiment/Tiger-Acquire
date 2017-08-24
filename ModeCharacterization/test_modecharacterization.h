@@ -8,6 +8,7 @@
 #include <vector>
 #include <algorithm>
 #include <functional>
+#include <cmath>
 //Qt Headers
 //
 //OpenCV Headers
@@ -22,7 +23,7 @@ namespace etig {
 namespace test {
 
 double volts_sqr_to_dbm( double voltage ) {
-    return 10.0 * log10( voltage / std::sqrt(0.05) );
+    return 10.0 * std::log10( voltage / std::sqrt(0.05) );
 }
 
 struct VoltsSqrTodBm {

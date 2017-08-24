@@ -1,13 +1,13 @@
-string;save_file_path;/home/bephillips2/workspace/Electric_Tiger_Control_Code/data/
+string;save_file_path;/home/admx/Electric_Tiger_Data
 double;length_of_tune;3
-double;revs_per_iteration;2.5
+double;revs_per_iteration;16
 double;start_length;7.0
 double;nwa_span_MHz;400
 double;nwa_points;401
 double;nwa_power_dBm;-15.0
 double;freq_window_MHz;100
 double;digitizer_rate_MHz;50
-double;averages;10000
+double;averages;100
 socket;switch;10.95.100.174;9221
 socket;network_analyzer;10.95.100.176;1234
 socket;stepper;10.95.100.177;7776

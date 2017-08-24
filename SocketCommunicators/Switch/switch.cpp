@@ -27,11 +27,11 @@ void Switch::SwitchToDigitizer() {
 }
 
 void Switch::SwitchToTransmission() {
-    socket->Send( "OP2 1" );
+    socket->Send( "OP2 0" );
 }
 
 void Switch::SwitchToReflection() {
-    socket->Send( "OP2 0" );
+    socket->Send( "OP2 1" );
 }
 
 //Private Functions

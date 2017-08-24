@@ -72,7 +72,7 @@ void ProgramFrame::EstablishBinSize() {
 
 double ProgramFrame::FindMinimaPeak(data_list formatted_points ) {
 
-    return mode_tracker.GetPeaksBiLat( formatted_points, 1 );
+    return mode_tracker.GetPeaksBiLat( formatted_points, 3 );
 
 }
 
