@@ -48,8 +48,8 @@ class ProgramCore: public QObject {
     const std::string save_file_path = "/home/admx/Electric_Tiger_Data/";
     const double length_of_tune = 2.0;
     const double revs_per_iterations = 1;
-    const double start_length = 7.0;
-    const double background_scan_length = 5.0;
+    const double start_length = 8.0;
+    const double background_scan_length = 5.5;
     const double nwa_span_MHz = 400.0;
     const uint nwa_points = 401;
     const double nwa_power_dBm = -15.0;
@@ -59,7 +59,8 @@ class ProgramCore: public QObject {
     const double na_min_freq = 3000.0;
     const double na_max_freq = 4600.0;
     const uint num_averages = 10;
-    uint rebin_size = 0;
+//    uint rebin_size = 0;
+    const uint rebin_size = 2000;
 
     const TCPSocketParam psu_switch = TCPSocketParam( "Switch", "10.95.100.174", 9221 );
     const TCPSocketParam network_analyzer = TCPSocketParam( "NetworkAnalyzer", "10.95.100.176", 1234 );

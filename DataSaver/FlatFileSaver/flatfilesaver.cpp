@@ -26,6 +26,7 @@ void FlatFileSaver::Save( const std::vector< data_triple<double> >& data_values,
     std::string save_file = GenerateSaveFileName( counter );
 
     std::ofstream config_file;
+    config_file.precision( 10 );
 
     config_file.open ( save_file, std::ofstream::out );
 

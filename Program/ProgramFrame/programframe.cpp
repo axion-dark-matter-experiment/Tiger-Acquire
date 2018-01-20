@@ -47,27 +47,29 @@ uint GetRebinSize( T f_res, T time_int ) {
 
 void ProgramFrame::EstablishBinSize() {
 
-    MoveToEndLength();
+    return;
 
-    auto network_analyzer_scan = hp8757_c->TakeDataMultiple();
+//    MoveToEndLength();
 
-    emit UpdateNA( network_analyzer_scan, nwa_span_MHz*4.0 );
+//    auto network_analyzer_scan = hp8757_c->TakeDataMultiple();
 
-    auto formatted_na_scan = power_to_data_list( network_analyzer_scan, na_min_freq, na_max_freq );
+//    emit UpdateNA( network_analyzer_scan, nwa_span_MHz*4.0 );
 
-    double peak_position = 0;
+//    auto formatted_na_scan = power_to_data_list( network_analyzer_scan, na_min_freq, na_max_freq );
 
-    try {
-        peak_position = FindMinimaPeak( formatted_na_scan );
-    } catch (const mode_track_failure& e) {
-        Jitter();
-    }
+//    double peak_position = 0;
 
-    MoveToStartLength();
+//    try {
+//        peak_position = FindMinimaPeak( formatted_na_scan );
+//    } catch (const mode_track_failure& e) {
+//        Jitter();
+//    }
 
-    rebin_size = GetRebinSize<double>( peak_position, 1.0 );
+//    MoveToStartLength();
 
-    std::cout << "Established rebin size of " << rebin_size << std::endl;
+//    rebin_size = GetRebinSize<double>( peak_position, 1.0 );
+
+//    std::cout << "Established rebin size of " << rebin_size << std::endl;
 }
 
 double ProgramFrame::FindMinimaPeak(data_list formatted_points ) {

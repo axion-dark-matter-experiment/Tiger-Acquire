@@ -1,6 +1,6 @@
 string;save_file_path;/home/admx/Electric_Tiger_Data
-double;length_of_tune;3
-double;revs_per_iteration;16
+double;length_of_tune;2
+double;revs_per_iteration;4
 double;start_length;7.0
 double;nwa_span_MHz;400
 double;nwa_points;401
